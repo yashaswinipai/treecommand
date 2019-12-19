@@ -3,7 +3,6 @@
 
 import os
 import sys
-
 class Tree:
     def __init__(self):
         self.dirCount = 0
@@ -14,7 +13,6 @@ class Tree:
             self.dirCount += 1
         else:
             self.fileCount += 1
-
     def summary(self):
         return str(self.dirCount) + " directories, " + str(self.fileCount) + " files"
 
@@ -24,7 +22,6 @@ class Tree:
         for index in range(len(filepaths)):
             if filepaths[index][0] == ".":
                 continue
-
             absolute = os.path.join(directory, filepaths[index])
             self.register(absolute)
 
@@ -35,8 +32,7 @@ class Tree:
             else:
                 print(prefix + "├── " + filepaths[index])
                 if os.path.isdir(absolute):
-                    self.walk(absolute, prefix + "│   ")
-
+                    self.walk(absolute, prefix + "│   "
 directory = "."
 if len(sys.argv) > 1:
     directory = sys.argv[1]
